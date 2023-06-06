@@ -12,10 +12,9 @@ class Stock(db.Model):
     price_change = db.Column(db.Integer, nullable=False)
     market_cap = db.Column(db.Integer, nullable=False)
     revenue = db.Column(db.Integer, nullable=False)
-    image = db.Column(db.String(40), nullable=False, unique=True)
-    date= db.Column(db.String)
+    timestamp= db.Column(db.String)
 
-    
+
 
 
 
@@ -27,6 +26,5 @@ class Stock(db.Model):
             'price change': self.price_change,
             'market cap': self.market_cap,
             'revenue': self.revenue,
-            'image': self.image,
-            'date': self.date  
+            'timestamp': self.timestamp
         }

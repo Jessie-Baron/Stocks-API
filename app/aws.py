@@ -12,6 +12,12 @@ s3 = boto3.client(
    aws_secret_access_key=os.environ.get("S3_SECRET")
 )
 
+rds = boto3.client(
+   "rds",
+   aws_access_key_id=os.environ.get("RDS_KEY"),
+   aws_secret_access_key=os.environ.get("RDS_SECRET")
+)
+
 
 def get_unique_filename(filename):
     ext = filename.rsplit(".", 1)[1].lower()
