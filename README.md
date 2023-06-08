@@ -4,7 +4,7 @@ simple Full-Stack, single-page application using Python, Flask with SQLAlchemy a
 
 ## Wiki
 
-[Schema](https://github.com/Jessie-Baron/Stocks-API/wiki/Schema)
+[Schema]([https://github.com/Jessie-Baron/Stocks-API/wiki/Schema](https://drawsql.app/teams/personal-928/diagrams/stocks-api/embed))
 
 [Asana Board](https://github.com/Jessie-Baron/Stocks-API/wiki/Asana-Board)
 
