@@ -1,31 +1,29 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { Route, Switch } from "react-router-dom";
-import SignupFormPage from "./components/SignupFormPage";
-import LoginFormPage from "./components/LoginFormPage";
-import { authenticate } from "./store/session";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Navigation from "./components/Navigation";
+import NavBar from "./components/Navigation/NavBar";
+import AllStocks from "./components/Navigation/Stock/AllStocks"
+import StockIndex from "./components/Navigation/Stock/StockIndex"
 
 function App() {
   const dispatch = useDispatch();
   const [isLoaded, setIsLoaded] = useState(false);
-  useEffect(() => {
-    dispatch(authenticate()).then(() => setIsLoaded(true));
-  }, [dispatch]);
 
   return (
     <>
-      <Navigation isLoaded={isLoaded} />
-      {isLoaded && (
+      <BrowserRouter>
         <Switch>
-          <Route path="/login" >
-            <LoginFormPage />
+          <Route path="/"  exact={true}>
+            <NavBar />
+            <AllStocks />
           </Route>
-          <Route path="/signup">
-            <SignupFormPage />
+          <Route path='/stocks/:stockId' exact={true}>
+            <NavBar />
+            <StockIndex />
           </Route>
         </Switch>
-      )}
+      </BrowserRouter>
     </>
   );
 }

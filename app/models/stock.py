@@ -8,8 +8,9 @@ class Stock(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(40), nullable=False, unique=True)
+    symbol = db.Column(db.String(40), nullable=False, unique=True)
     price = db.Column(db.Integer, nullable=False)
-    price_change = db.Column(db.Integer, nullable=False)
+    percent_change = db.Column(db.Integer, nullable=False)
     market_cap = db.Column(db.Integer, nullable=False)
     revenue = db.Column(db.Integer, nullable=False)
     timestamp= db.Column(db.String)
@@ -23,8 +24,9 @@ class Stock(db.Model):
             'id': self.id,
             'name': self.name,
             'price': self.price,
-            'price change': self.price_change,
-            'market cap': self.market_cap,
+            'symbol': self.symbol,
+            'percent_change': self.percent_change,
+            'market_cap': self.market_cap,
             'revenue': self.revenue,
             'timestamp': self.timestamp
         }

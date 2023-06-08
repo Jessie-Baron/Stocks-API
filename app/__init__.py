@@ -5,6 +5,7 @@ from flask_migrate import Migrate
 from .models import db
 from .seeds import seed_commands
 from .config import Config
+from .api.stocks_routes import stock_routes
 
 app = Flask(__name__, static_folder='../react-app/build', static_url_path='/')
 
@@ -13,6 +14,7 @@ app = Flask(__name__, static_folder='../react-app/build', static_url_path='/')
 app.cli.add_command(seed_commands)
 
 app.config.from_object(Config)
+app.register_blueprint(stock_routes, url_prefix='/api/stocks')
 db.init_app(app)
 Migrate(app, db)
 
