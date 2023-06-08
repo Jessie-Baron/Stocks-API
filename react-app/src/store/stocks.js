@@ -24,13 +24,7 @@ const deleteStock = (id) => ({
 });
 
 export const fetchAllStock = () => async (dispatch) => {
-  const response = await fetch("/api/stocks", {
-      method: "GET", 
-      headers: {
-          "Content-Type": "application/json",
-      },
-      body: JSON.stringify(stock),
-    });
+  const response = await fetch("/api/stocks");
     if (response.ok) {
         const stock = await response.json();
         dispatch(getStocks(stock));
