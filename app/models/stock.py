@@ -9,10 +9,10 @@ class Stock(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(40), nullable=False, unique=True)
     symbol = db.Column(db.String(40), nullable=False, unique=True)
-    price = db.Column(db.Integer, nullable=False)
-    percent_change = db.Column(db.Integer, nullable=False)
-    market_cap = db.Column(db.Integer, nullable=False)
-    revenue = db.Column(db.Integer, nullable=False)
+    price = db.Column(db.String, nullable=False)
+    percent_change = db.Column(db.String, nullable=False)
+    market_cap = db.Column(db.String, nullable=False)
+    revenue = db.Column(db.String, nullable=False)
     timestamp= db.Column(db.String)
 
 
